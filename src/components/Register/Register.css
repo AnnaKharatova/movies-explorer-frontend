@@ -1,0 +1,42 @@
+.register__caption {
+    justify-self: center;
+    margin: 0 auto;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #A0A0A0;
+    text-align: center;
+}
+
+.register__caption-link {
+    color: #3456F3;
+    text-decoration: none;
+}
+
+.register__submit-button {
+    font-weight: 500;
+    font-size: 14px;
+    margin: 102px 0 16px;
+    border: none;
+    width: 396px;
+    height: 45px;
+    background-color: #3456F3;
+    border-radius: 3px;
+    color: #FFFFFF;
+    transition: opacity ease-in-out .3s;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 450px) {
+    .register__submit-button {
+        width: 260px;
+        margin-top: 195px;
+        margin-bottom: 12px;
+        font-size: 12px;
+    }
+
+    .register__caption {
+        font-size: 12px;
+    }
+
+}

@@ -1,0 +1,131 @@
+.profile {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.profile__title {
+    margin: 0 auto;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    padding: 10px 0 110px;
+}
+
+.profile__form {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 410px;
+}
+
+.profile__input {
+    color: black;
+    border: none;
+    padding-bottom: 16px;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+    outline-style: none;
+    background-color: inherit;
+    text-align: right;
+
+}
+
+.profile__form-input {
+    padding-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #E8E8E8;
+}
+
+.profile__form-input:last-of-type {
+    border-bottom: none;
+}
+
+.profile__label {
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 13px;
+}
+
+.profile__update-button {
+    border: none;
+    background-color: inherit;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    margin-top: 200px;
+    margin-bottom: 16px;
+    transition: opacity ease-in-out .3s;
+}
+
+.profile__update-button:hover {
+    opacity: .8;
+    cursor: pointer;
+}
+
+.profile__signout-button {
+    border: none;
+    background-color: inherit;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+    color: #EE3465;
+    margin-bottom: 70px;
+    transition: opacity ease-in-out .3s;
+}
+
+.profile__signout-button:hover {
+    opacity: .8;
+    cursor: pointer;
+}
+
+.profile__error {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+    color: #EE3465;
+}
+
+@media screen and (max-width: 768px) {
+    .profile__title {
+        padding: 156px 0 80px;
+    }
+
+    .profile__update-button {
+        margin-top: 192px;
+    }
+}
+
+@media screen and (max-width: 485px) {
+    .profile__title {
+        padding: 0 0 66px;
+    }
+
+    .profile__name {
+        width: 260px;
+    }
+
+    .profile__email {
+        width: 260px;
+    }
+
+    .profile__update-button {
+        font-size: 12px;
+        line-height: 15px;
+        margin-top: 359px;
+    }
+
+    .profile__signout-button {
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    .profile__form {
+        width: 260px;
+    }
+}

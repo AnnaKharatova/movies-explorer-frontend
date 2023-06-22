@@ -1,0 +1,106 @@
+.technologies {
+    background-color: #F5F5F5;
+    margin: 0 auto;
+}
+
+.technologies__title {
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 116%;
+    text-align: center;
+    letter-spacing: -0.04em;
+    margin: 0 auto;
+    padding-top: 90px;
+}
+
+.technologies__subtitle {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    text-align: center;
+    letter-spacing: -0.04em;
+    max-width: 460px;
+    margin: 0 auto;
+    padding-top: 26px;
+}
+
+.technologies__list {
+    list-style: none;
+    display: flex;
+    margin: 0 auto;
+    width: 70%;
+    gap: 10px;
+    padding: 100px 0;
+    justify-content: center;
+}
+
+.technologies__item {
+    width: 90px;
+    height: 60px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    letter-spacing: -0.04em;
+    background-color: #E8E8E8;
+    border-radius: 10px;
+    align-self: center;
+    box-sizing: border-box;
+    padding: 21px 0 22px;
+}
+
+@media screen and (max-width: 768px) {
+    .technologies__title {
+        padding-top: 80px;
+    }
+
+    .technologies__subtitle {
+        font-size: 12px;
+        line-height: 150%;
+    }
+
+    .technologies__list {
+        width: 84%;
+        padding-top: 83px;
+        padding-bottom: 85px;
+    }
+}
+
+@media screen and (max-width: 570px) {
+    .technologies {
+        background-color: #FAFAFA;
+        margin: 0 auto;
+    }
+
+    .technologies__title {
+        font-size: 30px;
+        line-height: 36px;
+        padding-top: 58px;
+    }
+
+    .technologies__subtitle {
+        font-size: 11px;
+        line-height: 145%;
+        max-width: 290px;
+        padding-top: 24px;
+    }
+
+    .technologies__list {
+        width: 70%;
+        gap: 10px;
+        flex-wrap: wrap;
+        padding: 50px 0 80px;
+        justify-content: center;
+    }
+    .technologies__item {
+        width: 87px;
+        height: 57px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .technologies__item:last-child {
+        margin-right: auto;
+        margin-left: 18px;
+    }
+}

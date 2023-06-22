@@ -1,0 +1,40 @@
+.login__caption {
+    justify-self: center;
+    margin: 0 auto;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #A0A0A0;
+    text-align: center;
+}
+
+.login__caption-link {
+    color: #3456F3;
+    text-decoration: none;
+}
+
+.login__submit-button {
+    margin: 170px 0 16px;
+    border: none;
+    width: 396px;
+    height: 45px;
+    background-color: #3456F3;
+    border-radius: 3px;
+    color: #FFFFFF;
+    transition: opacity ease-in-out .3s;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 450px) {
+    .login__submit-button {
+        width: 260px;
+        margin-top: 262px;
+        margin-bottom: 12px;
+        font-size: 12px;
+    }
+
+    .login__caption {
+        font-size: 12px;
+    }
+
+}

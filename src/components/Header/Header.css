@@ -1,0 +1,134 @@
+.header__main {
+    box-sizing: border-box;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 52px 70px 70px;
+}
+
+.header__burger-menu {
+    padding: 0;
+    margin: 0;
+    display: none;
+    width: 28px;
+    height: 28px;
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+    transition: opacity ease-in-out .3s;
+}
+
+.header__burger-menu:hover {
+    opacity: .8;
+}
+
+.header__element {
+    border: 1px solid black;
+}
+
+.header__logo {
+    display: flex;
+    gap: 44px;
+}
+
+.header__nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 138%;
+    cursor: pointer;
+    transition: opacity ease-in-out .3s;
+}
+
+.header__nav-item {
+    text-decoration: none;
+    color: black;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 138%;
+    cursor: pointer;
+    transition: opacity ease-in-out .3s;
+}
+
+.header__nav-item:hover {
+    opacity: .8;
+}
+
+.header__nav-item_active {
+    text-decoration: none;
+    color: black;
+    font-size: 13px;
+    line-height: 138%;
+    font-weight: 500;
+    cursor: auto;
+}
+
+.header__account-button {
+    border: 2px solid rgba(170, 170, 170, 0.2);
+    border-radius: 50px;
+    background-color: inherit;
+    width: 100px;
+    height: 32px;
+    background-image: url(../../images/account-logo.svg);
+    background-repeat: no-repeat;
+    background-position: 12px 50%;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    transition: opcity ease-in-out .3s;
+}
+
+.header__account-button:hover {
+    opacity: .8;
+}
+
+.header__account-text {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: black;
+    margin: 0;
+    padding-left: 25px
+}
+
+@media screen and (max-width: 768px) {
+    .header__main {
+        padding-right: 35px;
+        padding-left: 30px;
+        padding-bottom: 95px;
+    }
+
+    .header__logo {
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .header__burger-menu {
+        display: block;
+    }
+
+    .header__account-button {
+        display: none;
+    }
+
+    .header__nav {
+        display: none;
+    }
+
+    .header__nav-item_active {
+        text-decoration: underline;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .header__main {
+        padding: 18px 20px 84px 15px;
+    }
+}

@@ -1,0 +1,102 @@
+.element {
+    max-width: 270px;
+    box-sizing: border-box;
+}
+
+.element__image {
+    width: 270px;
+    height: 151px;
+    object-fit: cover;
+}
+
+.element__info {
+    padding-top: 10px;
+    height: 45px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.element__title {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+    margin: 0;
+    max-width: 90%;
+}
+
+.element__button {
+    width: 24px;
+    height: 24px;
+    background-color: #F4F4F4;
+    border: none;
+    border-radius: 36px;
+    background-image: url(../../../images/button-like.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.element__button-delete {
+    width: 24px;
+    height: 24px;
+    background-color: #F4F4F4;
+    border: none;
+    border-radius: 36px;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: opacity ease-in-out .3s;
+    background-image: url(../../../images/delete-button.svg);
+    cursor: pointer;
+    opacity: 0;
+}
+
+.element__button-delete:hover {
+    opacity: 1;
+}
+
+.element__button_active {
+    background-image: url(../../../images/button-like-active.svg);
+}
+
+.element__caption {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+    color: #A0A0A0;
+    border-top: 1px solid #E8E8E8;
+    padding-top: 6px;
+}
+
+@media screen and (max-width: 768px) {
+    .element {
+        max-width: 339px;
+    }
+    .element__image {
+        width: 339px;
+        height: 190px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .element {
+        max-width: 300px;
+    }
+
+    .element__image {
+        width: 300px;
+        height: 168px;
+    }
+
+    .element__title {
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    .element__caption {
+        font-size: 10px;
+        line-height: 12px;
+    }
+
+    .element__button-delete {
+        opacity: 1;
+    }
+}
