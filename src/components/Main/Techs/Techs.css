@@ -4,13 +4,14 @@
 }
 
 .technologies__title {
+    margin: 0;
     font-weight: 400;
     font-size: 50px;
     line-height: 116%;
     text-align: center;
     letter-spacing: -0.04em;
-    margin: 0 auto;
     padding-top: 90px;
+
 }
 
 .technologies__subtitle {
@@ -20,8 +21,8 @@
     text-align: center;
     letter-spacing: -0.04em;
     max-width: 460px;
+    padding: 24px 0 0 14px;
     margin: 0 auto;
-    padding-top: 26px;
 }
 
 .technologies__list {
@@ -36,7 +37,6 @@
 
 .technologies__item {
     width: 90px;
-    height: 60px;
     font-weight: 400;
     font-size: 14px;
     line-height: 17px;
@@ -50,19 +50,27 @@
 }
 
 @media screen and (max-width: 768px) {
+    .title-techs {
+        border: none;
+    }
+
     .technologies__title {
         padding-top: 80px;
+        padding-right: 8px;
     }
 
     .technologies__subtitle {
+        padding-top: 22px;
+        padding-right: 12px;
         font-size: 12px;
         line-height: 150%;
     }
 
     .technologies__list {
+        padding-right: 6px;
         width: 84%;
         padding-top: 83px;
-        padding-bottom: 85px;
+        padding-bottom: 89px;
     }
 }
 
@@ -75,7 +83,8 @@
     .technologies__title {
         font-size: 30px;
         line-height: 36px;
-        padding-top: 58px;
+        padding-top: 60px;
+        padding-right: 0;
     }
 
     .technologies__subtitle {
@@ -92,9 +101,13 @@
         padding: 50px 0 80px;
         justify-content: center;
     }
+
     .technologies__item {
         width: 87px;
-        height: 57px;
+        font-size: 12px;
+        letter-spacing: -0.48px;
+        padding-bottom: 20px;
+        padding-top: 20px;
     }
 }
 

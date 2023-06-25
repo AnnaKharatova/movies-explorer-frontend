@@ -7,8 +7,10 @@ import { savedMoviesList } from '../../../utils/constants'
 function SavedMovies() {
   return (
     <>
-      <Header moviesClassName='header__nav-item' savedMoviesClassName='header__nav-item_active' />
+      <Header moviesClassName='header__nav-item' savedMoviesClassName='header__active-link' className={"header header-movies"} />
+      <main className='main'>
         <SearchForm cardsList={savedMoviesList} className='element__button-delete' />
+      </main>
       <Footer />
     </>
   );

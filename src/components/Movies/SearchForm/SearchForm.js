@@ -1,19 +1,28 @@
 import './SearchForm.css';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
-import FilterCheckbox from '../FilterCheckbox/FilterCheckbox'
+import FilterCheckbox from '../FilterCheckbox/FilterCheckbox';
+import { useLocation } from 'react-router-dom';
+
 
 function SearchForm(props) {
+    const location = useLocation();
     return (
         <>
             <section className="search">
-                <input className="search__input" placeholder="Фильм" />
-                <button className="search__button" type='button'>Найти</button>
+                <form className='search__form'>
+                    <input className="search__input" type='search' placeholder="Фильм" />
+                    <button className="search__button" type='button'>Найти</button>
+                </form>
                 <FilterCheckbox />
             </section>
             <MoviesCardList {...props} />
-            <section className="more">
-                <button className="more__button" type='button'>Еще</button>
-            </section>
+            {location.pathname.endsWith('/movies') ?
+                (<section className="more">
+                    <button className="more__button" type='button'>Еще</button>
+                </section>) : (
+                    <div className='more-space'></div>
+                )
+            }
         </>
     );
 }
