@@ -1,2 +1,3 @@
 # movies-explorer-frontend
-Яндекс.Практикум
+
+Макет: https://disk.yandex.ee/d/v2TFiGxLw0UqUw
