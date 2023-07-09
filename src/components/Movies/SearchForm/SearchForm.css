@@ -33,7 +33,7 @@
 .search__button {
     display: inline-block;
     position: absolute;
-    right: 8px;
+    right: -12px;
     top: 3.5%;
     width: 58.65px;
     height: 34px;
@@ -80,6 +80,20 @@
     height: 168px;
 }
 
+.content__error-message {
+    margin: 0 auto;
+    min-height: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 150%;
+    width: 50%;
+    opacity: .8;
+}
+
 @media screen and (max-width: 768px) {
     .more {
         padding-bottom: 70px;
@@ -117,6 +131,10 @@
     .more__button {
         width: 240px;
         margin-bottom: 0;
+    }
+
+    .content__error-message {
+        min-height: 15vh;
     }
 
 }

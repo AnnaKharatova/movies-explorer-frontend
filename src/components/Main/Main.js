@@ -7,10 +7,10 @@ import Footer from '../Footer/Footer'
 import Header from '../Header/Header';
 
 
-  function Main() {
+  function Main({isLogged}) {
   return (
     <>
-      <Header className={"header header-main"}/>
+      <Header className={"header header-main"} isLogged={isLogged} moviesClassName='header__nav-item' savedMoviesClassName='header__active-link' />
       <main className='main'>
         <Promo />
         <AboutProject />

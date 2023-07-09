@@ -6,14 +6,13 @@ import PopupMenu from '../PopupMenu/PopupMenu'
 
 function Header(props) {
     const [showPopup, setShowPopup] = useState(false);
-    const [isLoggedIn, setLoggedIn] = useState(false);
 
-    const location = useLocation();
+    /* const location = useLocation();
     useEffect(() => {
         if (location.pathname.endsWith('/movies') || location.pathname.endsWith('/saved-movies') || location.pathname.endsWith('/profile')) {
             setLoggedIn(true);
         }
-    }, [location.pathname]); // временное решение
+    }, [location.pathname]); // временное решение */
 
     function togglePopup() {
         setShowPopup(!showPopup);
@@ -25,7 +24,7 @@ function Header(props) {
                 <Link to="/">
                     <img className="header__logo-img" src={logo} alt="Логотип" />
                 </Link>
-                {isLoggedIn ? (
+                {props.isLogged ? (
                     <div className='header__loggedin'>
                         <div onClick={togglePopup} className="header__burger-menu">
                             <hr className="header__element" />

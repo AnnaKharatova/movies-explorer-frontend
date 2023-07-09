@@ -1,15 +1,14 @@
 import Header from '../../Header/Header'
 import SearchForm from '../SearchForm/SearchForm';
 import Footer from '../../Footer/Footer'
-import { savedMoviesList } from '../../../utils/constants'
 
+function SavedMovies({isLogged, savedMovies, setSavedMovies, allMovies}) {
 
-function SavedMovies() {
   return (
     <>
-      <Header moviesClassName='header__nav-item' savedMoviesClassName='header__active-link' className={"header header-movies"} />
+      <Header moviesClassName='header__nav-item' savedMoviesClassName='header__active-link' className={"header header-movies"} isLogged={isLogged}/>
       <main className='main'>
-        <SearchForm cardsList={savedMoviesList} className='element__button-delete' />
+        <SearchForm savedMovies={savedMovies} setSavedMovies={setSavedMovies} allMovies={allMovies}/>
       </main>
       <Footer />
     </>
