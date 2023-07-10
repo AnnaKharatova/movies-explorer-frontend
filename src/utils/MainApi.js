@@ -5,6 +5,8 @@ const checkResponse = (res) => {
   return Promise.reject(res.status);
 };
 
+/* user */
+
 export const register = (name, email, password) => {
   return fetch(`${BASE_URL}/signup`, {
     method: 'POST',
@@ -41,6 +43,30 @@ export const checkToken = (token) => {
     },
   }).then(checkResponse)
 };
+
+export const fetchUserInfo = () => {
+  return fetch(`${BASE_URL}/users/me`, {
+    method: 'GET',
+    headers: {
+      "Authorization": `Bearer ${localStorage.getItem('jwt')}`,
+      "Content-Type": "application/json",
+    }
+  })
+    .then(checkResponse)
+    .then((res) => res)
+}
+
+export const updateUserInfo = (name, email) => {
+  return fetch(`${BASE_URL}/users/me`, {
+    method: 'PATCH',
+    headers: {
+      "Authorization": `Bearer ${localStorage.getItem('jwt')}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ name, email }),
+  }).then(checkResponse)
+    .then((res) => res)
+}
 
 /* movies */
 
@@ -90,29 +116,4 @@ export const deleteMovie = (movieId) => {
     .then(checkResponse);
 }
 
-/* user */
-
-export const fetchUserInfo = () => {
-  return fetch(`${BASE_URL}/users/me`, {
-    method: 'GET',
-    headers: {
-      "Authorization": `Bearer ${localStorage.getItem('jwt')}`,
-      "Content-Type": "application/json",
-    }
-  })
-    .then(checkResponse)
-    .then((res) => res)
-}
-
-export const updateUserInfo = (name, email) => {
-  return fetch(`${BASE_URL}/users/me`, {
-    method: 'PATCH',
-    headers: {
-      "Authorization": `Bearer ${localStorage.getItem('jwt')}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ name, email }),
-  }).then(checkResponse)
-    .then((res) => res)
-}
 

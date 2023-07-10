@@ -82,7 +82,7 @@
 
 .content__error-message {
     margin: 0 auto;
-    min-height: 25vh;
+    min-height: 43vh;
     display: flex;
     flex-direction: column;
     justify-content: center;

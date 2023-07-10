@@ -39,7 +39,6 @@ function Profile({ isLogged, handleLogOut }) {
             updateProfile(name, email);
         }
         console.log('Данные пользователя обновленны')
-        // navigate('/movies');
     }
 
     function updateProfile(name, email) {

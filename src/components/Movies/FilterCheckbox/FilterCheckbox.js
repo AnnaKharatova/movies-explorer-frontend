@@ -1,7 +1,6 @@
 import './FilterCheckbox.css';
 import { useLocation } from 'react-router-dom';
 
-
 function FilterCheckbox({ isShortMovies, setIsShortMovies }) {
 
     const location = useLocation();

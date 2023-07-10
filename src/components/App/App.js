@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 
 import { useNavigate } from 'react-router-dom';
 
-import { useEffect, useState, useContext } from 'react';
+import { useEffect, useState } from 'react';
 import SavedMovies from '../Movies/SavedMovies/SavedMovies'
 import Main from '../Main/Main'
 import Movies from '../Movies/Movies'
@@ -26,6 +26,8 @@ function App() {
   const [savedMovies, setSavedMovies] = useState([])
   const [allMovies, setAllMovies] = useState([])
   const [isTokenChecked, setIsTokenChecked] = useState(false)
+  const [popupError, setPopupError] = useState('')
+
 
   useEffect(() => {
     if (loggedIn) {
@@ -37,9 +39,9 @@ function App() {
         })
         .catch((res) => {
           if (res === 500) {
-            console.log('На сервере произошла ошибка')
+            setPopupError('На сервере произошла ошибка')
           } else {
-            console.log('Ошибка получения данных пользователя')
+            setPopupError('Ошибка получения данных пользователя')
           }
         })
     }
@@ -58,11 +60,11 @@ function App() {
           }
           console.log('token is OK')
         }).catch((res) => {
+          setPopupError('При проверке токена произошла ошибка')
           console.log('token is not OK ', res)
         })
     }
   }, [loggedIn])
-
 
   useEffect(() => {
     const handleBeforeUnload = () => {
@@ -134,7 +136,7 @@ function App() {
     <CurrentUserContext.Provider value={currentUser}>
       <div className="page">
         <Routes>
-          <Route path="/" element={<Main isLogged={loggedIn} />} />
+          <Route path="/" element={<Main isLogged={loggedIn} popupError={popupError} />} />
           <Route path="/movies" element={<ProtectedRoute component={Movies} isLoading={isTokenChecked} isLogged={loggedIn} savedMovies={savedMovies} setSavedMovies={setSavedMovies} allMovies={allMovies} />} />
           <Route path="/saved-movies" element={<ProtectedRoute component={SavedMovies} isLoading={isTokenChecked} isLogged={loggedIn} savedMovies={savedMovies} setSavedMovies={setSavedMovies} allMovies={allMovies} />} />
           <Route path="/profile" element={<ProtectedRoute component={Profile} isLoading={isTokenChecked} isLogged={loggedIn} handleLogOut={handleLogOut} />} />

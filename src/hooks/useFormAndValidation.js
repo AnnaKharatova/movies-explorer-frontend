@@ -1,8 +1,9 @@
 import { useState, useCallback } from 'react';
-const validator = require('validator');
-const nameRegex = /^[a-zA-Zа-яА-Я\s-]+$/;
+import { nameRegex } from '../utils/constants'
+import validator from 'validator';
 
 export function useFormAndValidation() {
+
   const [values, setValues] = useState({});
   const [errors, setErrors] = useState({});
   const [isValid, setIsValid] = useState(true);

@@ -11,6 +11,7 @@
 .saved-elements {
     padding-top: 105px;
     padding-bottom: 49px;
+    min-height: 25vh;
 }
 
 @media screen and (max-width: 1279px) {

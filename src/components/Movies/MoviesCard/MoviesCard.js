@@ -1,13 +1,10 @@
 import './MoviesCard.css';
-import { useState, useEffect } from 'react';
-import { saveMovie, deleteMovie, getMovies } from '../../../utils/MainApi';
 import { useLocation } from 'react-router-dom';
 
 function MoviesCard({ card, savedMovies, deleteCard, saveCard }) {
     const location = useLocation();
     const locationMovies = location.pathname.endsWith('/movies')
     const inSavedList=savedMovies.find(c => c.movieId === card.id)
-
 
     function updateFavourite(event) {
         const likeButton = event.target;

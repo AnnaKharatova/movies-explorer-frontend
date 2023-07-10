@@ -5,7 +5,7 @@ import AboutMe from './AboutMe/AboutMe';
 import Portfolio from './Portfolio/Portfolio';
 import Footer from '../Footer/Footer'
 import Header from '../Header/Header';
-
+import ErrorPopup from '../ErrorPopup/ErrorPopup'
 
   function Main({isLogged}) {
   return (
@@ -17,6 +17,7 @@ import Header from '../Header/Header';
         <Techs />
         <AboutMe />
         <Portfolio />
+        <ErrorPopup />
       </main>
       <Footer />
     </>

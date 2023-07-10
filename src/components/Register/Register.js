@@ -3,7 +3,6 @@ import AuthForm from '../AuthForm/AuthForm'
 
 function Register(props) {
 
-
     return (
         <AuthForm
             {...props}
