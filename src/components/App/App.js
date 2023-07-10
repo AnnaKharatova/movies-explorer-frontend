@@ -1,6 +1,6 @@
 import './App.css';
+import React from 'react'
 import { Route, Routes } from 'react-router-dom';
-import {Redirect} from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 
 import { useEffect, useState } from 'react';
@@ -106,7 +106,7 @@ function App() {
   function onLogin(email, password) {
     authorize(email, password)
       .then(({ token }) => {
-        <Redirect to="/" />
+        navigate("/")
         setIsTokenChecked(false)
         if (token) {
           localStorage.setItem('jwt', token)
@@ -129,7 +129,7 @@ function App() {
   function handleLogOut() {
     setLoggedIn(false)
     localStorage.clear();
-    <Redirect to="/" />
+    navigate("/")
   }
 
   return (
