@@ -8,7 +8,7 @@ const checkResponse = (res) => {
 /* user */
 
 export const register = (name, email, password) => {
-  return fetch(`https://api.movies-express.nomoredomains.rocks/signup`, {
+  return fetch(`${BASE_URL}/signup`, {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
@@ -19,7 +19,7 @@ export const register = (name, email, password) => {
 };
 
 export const authorize = (email, password) => {
-  return fetch(`https://api.movies-express.nomoredomains.rocks/signin`, {
+  return fetch(`${BASE_URL}/signin`, {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
