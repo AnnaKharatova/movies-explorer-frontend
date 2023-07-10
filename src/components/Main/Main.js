@@ -5,18 +5,19 @@ import AboutMe from './AboutMe/AboutMe';
 import Portfolio from './Portfolio/Portfolio';
 import Footer from '../Footer/Footer'
 import Header from '../Header/Header';
+import ErrorPopup from '../ErrorPopup/ErrorPopup'
 
-
-  function Main() {
+  function Main({isLogged}) {
   return (
     <>
-      <Header className={"header header-main"}/>
+      <Header className={"header header-main"} isLogged={isLogged} moviesClassName='header__nav-item' savedMoviesClassName='header__active-link' />
       <main className='main'>
         <Promo />
         <AboutProject />
         <Techs />
         <AboutMe />
         <Portfolio />
+        <ErrorPopup />
       </main>
       <Footer />
     </>

@@ -1,7 +1,6 @@
 import './PopupMenu.css'
 import { Link, NavLink } from 'react-router-dom';
 
-
 function PopupMenu({ onClose }) {
 
     return (

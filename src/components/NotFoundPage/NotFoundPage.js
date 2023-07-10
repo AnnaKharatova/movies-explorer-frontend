@@ -1,7 +1,6 @@
 import './NotFoundPage.css'
 import { NavLink } from 'react-router-dom'
 
-
 function NotFoundPage() {
     return (
         <main className="not-found">

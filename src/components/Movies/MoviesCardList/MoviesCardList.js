@@ -3,15 +3,17 @@ import React from 'react';
 import MoviesCard from '../MoviesCard/MoviesCard'
 import { useLocation } from 'react-router-dom'
 
-function MoviesCardList(props) {
+function MoviesCardList({savedMovies, cardsList, deleteCard, saveCard}) {
   const location = useLocation();
   return (
     <section className={location.pathname.endsWith('/saved-movies') ? ("elements saved-elements") : ("elements")}>
-      {props.cardsList.map((card) => (
+      {cardsList.map((card) => (
         <MoviesCard
-          key={card.id}
+          key={card._id || card.id}
           card={card}
-          {...props}
+          savedMovies={savedMovies}
+          deleteCard={deleteCard}
+          saveCard={saveCard}
         />
       ))}
     </section>
