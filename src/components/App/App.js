@@ -1,6 +1,6 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
-
+import {Redirect} from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 
 import { useEffect, useState } from 'react';
@@ -16,7 +16,6 @@ import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 import api from '../../utils/MoviesApi';
 import { useFormAndValidation } from "../../hooks/useFormAndValidation";
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
-import { Redirect } from 'react-router-dom'
 
 function App() {
   const navigate = useNavigate();
