@@ -16,6 +16,7 @@ import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 import api from '../../utils/MoviesApi';
 import { useFormAndValidation } from "../../hooks/useFormAndValidation";
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
+import { Redirect } from 'react-router-dom'
 
 function App() {
   const navigate = useNavigate();
@@ -106,7 +107,7 @@ function App() {
   function onLogin(email, password) {
     authorize(email, password)
       .then(({ token }) => {
-        navigate('/')
+        <Redirect to="/" />
         setIsTokenChecked(false)
         if (token) {
           localStorage.setItem('jwt', token)
@@ -129,7 +130,7 @@ function App() {
   function handleLogOut() {
     setLoggedIn(false)
     localStorage.clear();
-    navigate('/')
+    <Redirect to="/" />
   }
 
   return (
