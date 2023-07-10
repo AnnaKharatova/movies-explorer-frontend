@@ -7,4 +7,5 @@ Pull request: https://github.com/AnnaKharatova/movies-explorer-frontend/pull/2
 Сайт: 
 
 фронт - movies-express.nomoredomains.work
+
 бэк - api.movies-express.nomoredomains.rocks
