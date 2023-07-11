@@ -72,7 +72,7 @@ export const getMovies = () => {
   return fetch(`${BASE_URL}/movies`, {
     method: 'GET',
     headers: {
-      authorization: `Bearer ${localStorage.getItem('jwt')}`,
+      "Authorization": `Bearer ${localStorage.getItem('jwt')}`,
       "Content-Type": "application/json",
     },
   }).then(checkResponse)
@@ -82,7 +82,7 @@ export const saveMovie = (movie) => {
   return fetch(`${BASE_URL}/movies`, {
     method: 'POST',
     headers: {
-      authorization: `Bearer ${localStorage.getItem('jwt')}`,
+      "Authorization": `Bearer ${localStorage.getItem('jwt')}`,
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
@@ -107,7 +107,7 @@ export const deleteMovie = (movieId) => {
   return fetch(`${BASE_URL}/movies/${movieId}`, {
     method: 'DELETE',
     headers: {
-      authorization: `Bearer ${localStorage.getItem('jwt')}`,
+      "Authorization": `Bearer ${localStorage.getItem('jwt')}`,
       "Content-Type": "application/json",
     },
   })
