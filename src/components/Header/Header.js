@@ -5,7 +5,9 @@ import React, { useState } from 'react';
 import PopupMenu from '../PopupMenu/PopupMenu'
 
 function Header(props) {
+
     const [showPopup, setShowPopup] = useState(false);
+    
     function togglePopup() {
         setShowPopup(!showPopup);
     };

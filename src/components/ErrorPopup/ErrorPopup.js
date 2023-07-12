@@ -1,14 +1,14 @@
 import './ErrorPopup.css'
 
-function PopupWithForm({popupError, setPopupError}) {
+function ErrorPopup ({popupError, setIsPopupErrorOpen, isPopupErrorOpen}) {
 
     function closePopup(evt) {
         evt.preventDefault();
-        setPopupError("")
+        setIsPopupErrorOpen(false)
     }
-    
+
     return (
-        <div className={`popup ${popupError ? 'popup_opened' : ''}`}>
+        <div className={`popup ${isPopupErrorOpen ? 'popup_opened' : ''}`}>
             <div className="popup__container">
                 <div className="popup__body">
                     <h2 className="popup__title">{popupError}</h2>
@@ -19,4 +19,4 @@ function PopupWithForm({popupError, setPopupError}) {
     )
 }
 
-export default PopupWithForm;
+export default ErrorPopup;

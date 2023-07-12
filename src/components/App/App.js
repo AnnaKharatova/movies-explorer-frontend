@@ -13,34 +13,34 @@ import Register from '../Register/Register'
 import NotFoundPage from '../NotFoundPage/NotFoundPage';
 import { register, authorize, checkToken, fetchUserInfo, getMovies } from '../../utils/MainApi';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
-import api from '../../utils/MoviesApi';
 import { useFormAndValidation } from "../../hooks/useFormAndValidation";
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
 function App() {
   const navigate = useNavigate();
   const { resetForm } = useFormAndValidation();
-  const [currentUser, setCurrentUser] = useState({ name: '', email: '' });
+  const [currentUser, setCurrentUser] = useState({ name: '', email: '', id: '' });
   const [loggedIn, setLoggedIn] = useState(false);
   const [error, setError] = useState('')
   const [savedMovies, setSavedMovies] = useState([])
-  const [allMovies, setAllMovies] = useState([])
-  const [isTokenChecked, setIsTokenChecked] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
   const [popupError, setPopupError] = useState('')
-
+  const [isPopupErrorOpen, setIsPopupErrorOpen] = useState(false)
 
   useEffect(() => {
     if (loggedIn) {
-      Promise.all([fetchUserInfo(), getMovies(), api.getAllMovies()])
-        .then(([userInfo, savedMovies, allMovies]) => {
+      Promise.all([fetchUserInfo(), getMovies()])
+        .then(([userInfo, savedMovies]) => {
           setCurrentUser(userInfo);
           setSavedMovies(savedMovies)
-          setAllMovies(allMovies)
         })
         .catch((res) => {
           if (res === 500) {
+            setIsPopupErrorOpen(true)
             setPopupError('На сервере произошла ошибка')
           } else {
+            console.log('Ошибка получения данных пользователя')
+            setIsPopupErrorOpen(true)
             setPopupError('Ошибка получения данных пользователя')
           }
         })
@@ -48,18 +48,19 @@ function App() {
   }, [loggedIn]);
 
   useEffect(() => {
-    setIsTokenChecked(true)
+    setIsLoading(true)
     const jwt = localStorage.getItem('jwt');
     if (jwt) {
       checkToken(jwt)
         .then((res) => {
           if (res) {
             setLoggedIn(true);
-            setIsTokenChecked(false)
+            setIsLoading(false)
             backToPage()
           }
           console.log('token is OK')
         }).catch((res) => {
+          setIsPopupErrorOpen(true)
           setPopupError('При проверке токена произошла ошибка')
           console.log('token is not OK ', res)
         })
@@ -100,14 +101,13 @@ function App() {
     } else {
       navigate('/');
     }
-
   }
 
   function onLogin(email, password) {
     authorize(email, password)
       .then(({ token }) => {
+        setLoggedIn(true)
         navigate("/")
-        setIsTokenChecked(false)
         if (token) {
           localStorage.setItem('jwt', token)
         }
@@ -136,10 +136,10 @@ function App() {
     <CurrentUserContext.Provider value={currentUser}>
       <div className="page">
         <Routes>
-          <Route path="/" element={<Main isLogged={loggedIn} popupError={popupError} />} />
-          <Route path="/movies" element={<ProtectedRoute component={Movies} isLoading={isTokenChecked} isLogged={loggedIn} savedMovies={savedMovies} setSavedMovies={setSavedMovies} allMovies={allMovies} />} />
-          <Route path="/saved-movies" element={<ProtectedRoute component={SavedMovies} isLoading={isTokenChecked} isLogged={loggedIn} savedMovies={savedMovies} setSavedMovies={setSavedMovies} allMovies={allMovies} />} />
-          <Route path="/profile" element={<ProtectedRoute component={Profile} isLoading={isTokenChecked} isLogged={loggedIn} handleLogOut={handleLogOut} />} />
+          <Route path="/" element={<Main isLogged={loggedIn} popupError={popupError} setIsPopupErrorOpen={setIsPopupErrorOpen} isPopupErrorOpen={isPopupErrorOpen}/>} />
+          <Route path="/movies" element={<ProtectedRoute component={Movies} isLoading={isLoading} isLogged={loggedIn} savedMovies={savedMovies} setSavedMovies={setSavedMovies}/>} />
+          <Route path="/saved-movies" element={<ProtectedRoute component={SavedMovies} isLoading={isLoading} isLogged={loggedIn} savedMovies={savedMovies} setSavedMovies={setSavedMovies}/>} />
+          <Route path="/profile" element={<ProtectedRoute component={Profile} isLoading={isLoading} isLogged={loggedIn} handleLogOut={handleLogOut} />} />
           <Route path="/signin" element={<Login onRegister={onRegister} onLogin={onLogin} error={error} />} />
           <Route path="/signup" element={<Register onRegister={onRegister} onLogin={onLogin} error={error} />} />
           <Route path="*" element={<NotFoundPage />} />

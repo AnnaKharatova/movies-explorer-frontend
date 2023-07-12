@@ -12,7 +12,7 @@ export function useWindowResize() {
             setTimeout(() => {
                 setWindowWidth(window.innerWidth);
                 setDisplayedMovies(cardsPerRow)
-            }, 200)
+            }, 800)
         };
         window.addEventListener('resize', handleResize);
         return () => {

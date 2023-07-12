@@ -4,8 +4,7 @@
 
 Pull request: https://github.com/AnnaKharatova/movies-explorer-frontend/pull/2
 
-Сайт: 
+Сайт: https://movies-express.nomoredomains.work
 
-фронт - movies-express.nomoredomains.work
 
-бэк - api.movies-express.nomoredomains.rocks
+бэк - api.movies-express.nomoredomains.roc

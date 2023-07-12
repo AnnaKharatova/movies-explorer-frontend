@@ -1,4 +1,4 @@
-.popup {
+.popup-menu {
     position: fixed;
     z-index: 1;
     width: 100%;
@@ -8,7 +8,7 @@
     left: 0;
 }
 
-.popup__body {
+.popup-menu__body {
     width: 520px;
     background-color: #FAFAFA;
     text-align: right;
@@ -17,7 +17,7 @@
     min-height: 100vh;
 }
 
-.popup__close-button {
+.popup-menu__close-button {
     background-image: url(../../images/close-button.svg);
     background-size: cover;
     width: 30px;
@@ -31,11 +31,11 @@
     transition: opacity ease-in-out .3s;
 }
 
-.popup__close-button:hover {
+.popup-menu__close-button:hover {
     opacity: .8;
 }
 
-.popup__nav {
+.popup-menu__nav {
     list-style: none;
     margin: 0 auto;
     text-align: center;
@@ -43,11 +43,11 @@
     text-decoration: none;
 }
 
-.popup__list {
+.popup-menu__list {
     margin-top: 28px;
 }
 
-.popup__nav-item {
+.popup-menu__nav-item {
     text-decoration: none;
     padding: 0;
     font-weight: 500;
@@ -63,11 +63,11 @@
     cursor: auto;
 }
 
-.popup__nav-item:hover {
+.popup-menu__nav-item:hover {
     opacity: .8;
 }
 
-.popup-account {
+.popup-menu-account {
     display: inline-block;
     position: fixed;
     right: 50%;
@@ -80,33 +80,33 @@
 }
 
 @media screen and (max-width: 530px) {
-    .popup__body {
+    .popup-menu__body {
         width: 100%;
         padding-bottom: 46px;
     }
 
-    .popup__close-button {
+    .popup-menu__close-button {
         margin-top: 15px;
         margin-right: 13px;
     }
 
-    .popup__nav {
+    .popup-menu__nav {
         padding: 74px 0 0;
     }
 
-    .popup__nav-item {
+    .popup-menu__nav-item {
         margin-bottom: 24px;
     }
 
-    .popup__nav-item:hover {
+    .popup-menu__nav-item:hover {
         text-underline-offset: 7px;
     }
 
-    .popup__list {
+    .popup-menu__list {
         margin-top: 24px;
     }
 
-    .popup-account {
+    .popup-menu-account {
         margin: 0;
         bottom: 5%;
         right: 65%;

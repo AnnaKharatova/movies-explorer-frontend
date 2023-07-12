@@ -5,14 +5,15 @@ import Footer from '../Footer/Footer'
 import { useWindowResize } from '../../hooks/useWindowResize'
 import api from '../../utils/MoviesApi'
 
-function Movies({ isLogged, savedMovies, setSavedMovies, allMovies }) {
+function Movies({ isLogged, savedMovies, setSavedMovies }) {
   const { cardsPerRow, loadMoreCount } = useWindowResize()
-  const [cards, setCards] = useState(allMovies);
+  const [cards, setCards] = useState([]);
   const [preloader, setPreloader] = useState(false);
   const [isShortMovies, setIsShortMovies] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [searchText, setSearchText] = useState('');
   const [displayedCards, setDisplayedCards] = useState(cardsPerRow)
+
 
   useEffect(() => {
     setDisplayedCards(cardsPerRow)
@@ -20,7 +21,7 @@ function Movies({ isLogged, savedMovies, setSavedMovies, allMovies }) {
 
   useEffect(() => {
     const query = localStorage.getItem('moviesSearchText');
-    const storageMovies = localStorage.getItem('moviesData');
+    const storageMovies = localStorage.getItem(`moviesCards`);
     const storedIsShortMovies = localStorage.getItem('moviesIsShortMovies');
     if (query) {
       setSearchText(query);
@@ -47,7 +48,7 @@ function Movies({ isLogged, savedMovies, setSavedMovies, allMovies }) {
         const filteredMovies = data.filter(card => card.nameRU.toLowerCase().includes(searchText));
         const filteredShortMovies = isShortMovies ? filteredMovies.filter((film) => film.duration <= 40) : filteredMovies;
         setCards(filteredShortMovies)
-        localStorage.setItem('moviesData', JSON.stringify(filteredShortMovies));
+        localStorage.setItem(`moviesCards`, JSON.stringify(filteredShortMovies));
         if (filteredShortMovies.length === 0) {
           setErrorMessage("Ничего не найдено")
         }

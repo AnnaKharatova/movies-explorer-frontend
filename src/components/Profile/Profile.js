@@ -45,7 +45,8 @@ function Profile({ isLogged, handleLogOut }) {
         updateUserInfo(name, email)
             .then((res) => {
                 currentUser.name = res.name;
-                currentUser.email = res.email
+                currentUser.email = res.email;
+                currentUser.id = res._id;
                 setCurrentName(res.name)
             })
             .catch((res) => {
@@ -64,7 +65,7 @@ function Profile({ isLogged, handleLogOut }) {
             <Header moviesClassName='header__nav-item' savedMoviesClassName='header__nav-item' className={"header header-movies"} isLogged={isLogged} />
             <main className='main'>
                 <section className="profile">
-                    <h1 className="profile__title">Привет, {currentName || currentUser.name} !</h1>
+                    <h1 className="profile__title">Привет, {currentName || currentUser.name}</h1>
                     <form className='profile__form' onSubmit={handleSubmit}>
                         <div className='profile__form-input'>
                             <label className='profile__label'>Имя</label>
