@@ -10,20 +10,10 @@ function SavedMovies({ isLogged, savedMovies, setSavedMovies }) {
   const [searchText, setSearchText] = useState('');
   const [savedCardsList, setSavedCardsList] = useState([])
 
-  useEffect(() => {
-    const savedQuery = localStorage.getItem('savedSearchText');
-    const storageMovies = localStorage.getItem('savedMoviesData');
-    const storedIsShortMovies = localStorage.getItem('savedIsShortMovies');
-    if (savedQuery) {
-      setSearchText(savedQuery);
-    }
-    if (storageMovies) {
-      setSavedCardsList(JSON.parse(storageMovies));
-    }
-    if (storedIsShortMovies) {
-      setIsShortMovies(storedIsShortMovies === 'true');
-    }
-  }, [])
+
+  useEffect(()=> {
+    setSavedCardsList(savedMovies)
+  }, [savedMovies])
 
   function handleSearch() {
     if (searchText.trim() === '') {
@@ -31,12 +21,9 @@ function SavedMovies({ isLogged, savedMovies, setSavedMovies }) {
       return;
     }
     setErrorMessage('');
-    localStorage.setItem('savedSearchText', searchText);
     const filteredMovies = savedMovies.filter(card => card.nameRU.toLowerCase().includes(searchText));
     const filteredShortMovies = isShortMovies ? filteredMovies.filter((film) => film.duration <= 40) : filteredMovies;
     setSavedCardsList(filteredShortMovies)
-    localStorage.setItem('savedMoviesData', JSON.stringify(filteredShortMovies));
-
     if (filteredShortMovies.length === 0) {
       setErrorMessage("Ничего не найдено")
     }
