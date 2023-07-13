@@ -1,5 +1,5 @@
 import './Profile.css'
-import React, { useState, useContext, useRef, useEffect } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import Header from '../Header/Header';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 import { useFormAndValidation } from '../../hooks/useFormAndValidation'
@@ -7,7 +7,7 @@ import { updateUserInfo } from '../../utils/MainApi'
 import ErrorPopup from '../ErrorPopup/ErrorPopup';
 
 function Profile({ isLogged, handleLogOut }) {
-    const { values, handleChange, errors, isValid, setErrors,} = useFormAndValidation();
+    const { values, handleChange, errors, isValid } = useFormAndValidation();
     const currentUser = useContext(CurrentUserContext);
     const [isEditing, setIsEditing] = useState(false);
     const [currentName, setCurrentName] = useState(currentUser.name)
@@ -16,17 +16,12 @@ function Profile({ isLogged, handleLogOut }) {
     const [isPopupErrorOpen, setIsPopupErrorOpen] = useState(false)
     const [popupMessage, setPopupMessage] = useState(false)
 
-    console.log(currentUser.email)
-
     useEffect(() => {
-            if ((values.name !== currentUser.name || values.email !== currentUser.email)){
-                console.log('!==')
-                setActiveButton(true)
-
-            } else {
-                console.log('===')
-                setActiveButton(false)
-            }
+        if ((values.name !== currentUser.name || values.email !== currentUser.email)) {
+            setActiveButton(true)
+        } else {
+            setActiveButton(false)
+        }
     }, [currentUser, values, isEditing]);
 
     const handleEditClick = () => {
@@ -97,7 +92,7 @@ function Profile({ isLogged, handleLogOut }) {
                         </div>
                         <span className="profile__error">{errors.name}{errors.email}{error}</span>
                         {isEditing ? (
-                                <button className="profile__submit-button" type="submit" disabled={!activeButton || !isValid}>Сохранить</button>
+                            <button className="profile__submit-button" type="submit" disabled={!activeButton || !isValid}>Сохранить</button>
                         ) : (
                             <>
                                 <button onClick={handleEditClick} className="profile__update-button" type="button">Редактировать</button>

@@ -1,6 +1,7 @@
-import { useState, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 import { nameRegex } from '../utils/constants'
 import validator from 'validator';
+import { INPUT_VALUE_MIN_LENGTH, INPUT_VALUE_MAX_LENGTH } from '../utils/constants'
 
 export function useFormAndValidation() {
 
@@ -17,11 +18,15 @@ export function useFormAndValidation() {
         setErrors({ ...errors, [name]: "Введите правильное имя" });
       } else if (!value) {
         setErrors({ ...errors, [name]: 'Введите имя' });
-      } else {
+      } else if (value.length < INPUT_VALUE_MIN_LENGTH || value.length > INPUT_VALUE_MAX_LENGTH) {
+        setErrors({
+          ...errors, [name]: `Значение должно быть больше ${INPUT_VALUE_MIN_LENGTH} букв и меньше ${INPUT_VALUE_MAX_LENGTH}`
+        });
+      }
+      else {
         setErrors({ ...errors, [name]: "" });
       }
     }
-
     if (name === "email") {
       if (!validator.isEmail(value)) {
         setErrors({ ...errors, [name]: "Введите правильный адрес электронной почты" });
@@ -31,7 +36,6 @@ export function useFormAndValidation() {
         setErrors({ ...errors, [name]: "" });
       }
     }
-
     setIsValid(e.target.closest('form').checkValidity());
   };
 

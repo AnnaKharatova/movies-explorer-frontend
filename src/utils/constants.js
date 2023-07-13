@@ -9,6 +9,9 @@ export const nameRegex = /^[a-zA-Zа-яА-Я\s-]+$/;
 
 export const SHORT_FILM_DURATION = 40;
 
+export const INPUT_VALUE_MIN_LENGTH = 2;
+export const INPUT_VALUE_MAX_LENGTH = 30;
+
 /* используются в useWindowResize */
 export const RESIZE_TIMEOUT = 800;
 export const WIDTH_725 = 725;
