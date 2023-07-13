@@ -4,15 +4,20 @@ import Header from '../Header/Header';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 import { useFormAndValidation } from '../../hooks/useFormAndValidation'
 import { updateUserInfo } from '../../utils/MainApi'
+import ErrorPopup from '../ErrorPopup/ErrorPopup';
 
 function Profile({ isLogged, handleLogOut }) {
     const { values, handleChange, errors, isValid, setErrors,} = useFormAndValidation();
     const currentUser = useContext(CurrentUserContext);
-    let initialState = useRef(true);
     const [isEditing, setIsEditing] = useState(false);
     const [currentName, setCurrentName] = useState(currentUser.name)
     const [disableButton, setDisableButton] = useState(true)
     const [error, setError] = useState("")
+    const [isPopupErrorOpen, setIsPopupErrorOpen] = useState(false)
+    const [popupMessage, setPopupMessage] = useState(false)
+    let initialState = useRef(true);
+
+    console.log(currentUser.email)
 
     useEffect(() => {
         if (initialState.current) {
@@ -48,6 +53,8 @@ function Profile({ isLogged, handleLogOut }) {
                 currentUser.email = res.email;
                 currentUser.id = res._id;
                 setCurrentName(res.name)
+                setIsPopupErrorOpen(true)
+                setPopupMessage('Обновление данных прошло успешно')
             })
             .catch((res) => {
                 if (res === 409) {
@@ -108,6 +115,7 @@ function Profile({ isLogged, handleLogOut }) {
                     </form>
                 </section>
             </main>
+            <ErrorPopup popupError={popupMessage} setIsPopupErrorOpen={setIsPopupErrorOpen} isPopupErrorOpen={isPopupErrorOpen} />
         </>
     );
 }
