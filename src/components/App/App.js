@@ -99,7 +99,7 @@ function App() {
     if (lastVisitedPage) {
       navigate(lastVisitedPage);
     } else {
-      navigate('/');
+      navigate('/movies');
     }
   }
 
@@ -107,7 +107,7 @@ function App() {
     authorize(email, password)
       .then(({ token }) => {
         setLoggedIn(true)
-        navigate("/")
+        navigate("/movies")
         if (token) {
           localStorage.setItem('jwt', token)
         }
