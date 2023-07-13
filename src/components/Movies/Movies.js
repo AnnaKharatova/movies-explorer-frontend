@@ -4,6 +4,7 @@ import SearchForm from '../Movies/SearchForm/SearchForm'
 import Footer from '../Footer/Footer'
 import { useWindowResize } from '../../hooks/useWindowResize'
 import api from '../../utils/MoviesApi'
+import { SHORT_FILM_DURATION } from '../../utils/constants';
 
 function Movies({ isLogged, savedMovies, setSavedMovies }) {
   const { cardsPerRow, loadMoreCount } = useWindowResize()
@@ -13,7 +14,6 @@ function Movies({ isLogged, savedMovies, setSavedMovies }) {
   const [errorMessage, setErrorMessage] = useState("");
   const [searchText, setSearchText] = useState('');
   const [displayedCards, setDisplayedCards] = useState(cardsPerRow)
-
 
   useEffect(() => {
     setDisplayedCards(cardsPerRow)
@@ -46,7 +46,7 @@ function Movies({ isLogged, savedMovies, setSavedMovies }) {
     api.getAllMovies()
       .then((data) => {
         const filteredMovies = data.filter(card => card.nameRU.toLowerCase().includes(searchText));
-        const filteredShortMovies = isShortMovies ? filteredMovies.filter((film) => film.duration <= 40) : filteredMovies;
+        const filteredShortMovies = isShortMovies ? filteredMovies.filter((film) => film.duration <= SHORT_FILM_DURATION) : filteredMovies;
         setCards(filteredShortMovies)
         localStorage.setItem(`moviesCards`, JSON.stringify(filteredShortMovies));
         if (filteredShortMovies.length === 0) {
