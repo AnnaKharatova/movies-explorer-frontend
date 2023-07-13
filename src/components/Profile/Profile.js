@@ -11,27 +11,23 @@ function Profile({ isLogged, handleLogOut }) {
     const currentUser = useContext(CurrentUserContext);
     const [isEditing, setIsEditing] = useState(false);
     const [currentName, setCurrentName] = useState(currentUser.name)
-    const [disableButton, setDisableButton] = useState(true)
+    const [activeButton, setActiveButton] = useState(false)
     const [error, setError] = useState("")
     const [isPopupErrorOpen, setIsPopupErrorOpen] = useState(false)
     const [popupMessage, setPopupMessage] = useState(false)
-    let initialState = useRef(true);
 
     console.log(currentUser.email)
 
     useEffect(() => {
-        if (initialState.current) {
-            initialState.current = false;
-        } else if (values.name && values.email) {
-            if ((values.name.value !== currentUser.name || values.email.value !== currentUser.email) && isValid) {
-                setDisableButton(false);
-                setErrors('')
-                setError('')
+            if ((values.name !== currentUser.name || values.email !== currentUser.email)){
+                console.log('!==')
+                setActiveButton(true)
+
             } else {
-                setDisableButton(true);
+                console.log('===')
+                setActiveButton(false)
             }
-        }
-    }, [currentUser, values, isValid, setErrors]);
+    }, [currentUser, values, isEditing]);
 
     const handleEditClick = () => {
         setIsEditing(!isEditing);
@@ -65,6 +61,7 @@ function Profile({ isLogged, handleLogOut }) {
                     setError("При обновлении профиля произошла ошибка.")
                 }
             })
+            .finally(setIsEditing(false))
     }
 
     return (
@@ -82,8 +79,7 @@ function Profile({ isLogged, handleLogOut }) {
                                 name='name'
                                 minLength={2}
                                 maxLength={30}
-                                value={values.name || ''}
-                                placeholder={currentUser.name}
+                                value={values.name = values.name || currentUser.name || ''}
                                 onChange={handleChange}
                                 required
                                 disabled={!isEditing} />
@@ -94,17 +90,14 @@ function Profile({ isLogged, handleLogOut }) {
                                 type='email'
                                 id="email"
                                 name="email"
-                                value={values.email || ""}
+                                value={values.email = values.email || currentUser.email || ''}
                                 onChange={handleChange}
                                 required
-                                placeholder={currentUser.email}
                                 disabled={!isEditing} />
                         </div>
+                        <span className="profile__error">{errors.name}{errors.email}{error}</span>
                         {isEditing ? (
-                            <>
-                                <span className="profile__error">{errors.name}{errors.email}{error}</span>
-                                <button className="profile__submit-button" type="submit" disabled={disableButton || !isValid}>Сохранить</button>
-                            </>
+                                <button className="profile__submit-button" type="submit" disabled={!activeButton || !isValid}>Сохранить</button>
                         ) : (
                             <>
                                 <button onClick={handleEditClick} className="profile__update-button" type="button">Редактировать</button>
