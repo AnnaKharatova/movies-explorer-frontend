@@ -14,7 +14,7 @@ function Profile({ isLogged, handleLogOut }) {
     const [activeButton, setActiveButton] = useState(false)
     const [error, setError] = useState("")
     const [isPopupErrorOpen, setIsPopupErrorOpen] = useState(false)
-    const [popupMessage, setPopupMessage] = useState(false)
+    const [popupMessage, setPopupMessage] = useState('')
 
     useEffect(() => {
         if ((values.name !== currentUser.name || values.email !== currentUser.email)) {
