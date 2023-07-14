@@ -101,7 +101,6 @@ function Profile({ isLogged, handleLogOut }) {
                                 <button onClick={handleLogOut} className="profile__signout-button" type="button">Выйти из аккаунта</button>
                             </>
                         )}
-
                     </form>
                 </section>
             </main>

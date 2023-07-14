@@ -4,14 +4,12 @@ import SearchForm from '../SearchForm/SearchForm';
 import Footer from '../../Footer/Footer'
 
 function SavedMovies({ isLogged, savedMovies, setSavedMovies }) {
-
   const [isShortMovies, setIsShortMovies] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [searchText, setSearchText] = useState('');
   const [savedCardsList, setSavedCardsList] = useState([])
 
-
-  useEffect(()=> {
+  useEffect(() => {
     setSavedCardsList(savedMovies)
   }, [savedMovies])
 

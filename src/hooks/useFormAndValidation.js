@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import { nameRegex } from '../utils/constants'
 import validator from 'validator';
 import { INPUT_VALUE_MIN_LENGTH, INPUT_VALUE_MAX_LENGTH } from '../utils/constants'
