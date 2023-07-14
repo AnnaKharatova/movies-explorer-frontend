@@ -75,6 +75,7 @@ function Profile({ isLogged, handleLogOut }) {
                                 minLength={2}
                                 maxLength={30}
                                 value={values.name = values.name || currentUser.name || ''}
+                                //value={isEditing ? values.name || "" : currentUser.name}
                                 onChange={handleChange}
                                 required
                                 disabled={!isEditing} />
@@ -86,6 +87,7 @@ function Profile({ isLogged, handleLogOut }) {
                                 id="email"
                                 name="email"
                                 value={values.email = values.email || currentUser.email || ''}
+                                //value={isEditing ? values.email || "" : currentUser.email}
                                 onChange={handleChange}
                                 required
                                 disabled={!isEditing} />

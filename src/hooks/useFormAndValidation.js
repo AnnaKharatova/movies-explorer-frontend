@@ -4,7 +4,6 @@ import validator from 'validator';
 import { INPUT_VALUE_MIN_LENGTH, INPUT_VALUE_MAX_LENGTH } from '../utils/constants'
 
 export function useFormAndValidation() {
-
   const [values, setValues] = useState({});
   const [errors, setErrors] = useState({});
   const [isValid, setIsValid] = useState(true);

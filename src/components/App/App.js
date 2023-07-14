@@ -1,8 +1,7 @@
 import './App.css';
 import React from 'react'
 import { Route, Routes } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
-
+import { useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react';
 import SavedMovies from '../Movies/SavedMovies/SavedMovies'
 import Main from '../Main/Main'
@@ -56,7 +55,6 @@ function App() {
           if (res) {
             setLoggedIn(true);
             setIsLoading(false)
-            backToPage()
           }
           console.log('token is OK')
         }).catch((res) => {
@@ -92,15 +90,6 @@ function App() {
         }
       })
       .finally(resetForm())
-  }
-
-  function backToPage() {
-    const lastVisitedPage = localStorage.getItem('lastVisitedPage');
-    if (lastVisitedPage) {
-      navigate(lastVisitedPage);
-    } else {
-      navigate('/movies');
-    }
   }
 
   function onLogin(email, password) {
