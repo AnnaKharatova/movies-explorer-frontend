@@ -37,7 +37,7 @@
     transition: opacity ease-in-out .3s;
 }
 
-.element__button {
+.element__button:hover {
     opacity: .8;
 }
 

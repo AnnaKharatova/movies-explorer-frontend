@@ -1,119 +1,27 @@
-import words from '../images/33words.jpg';
-import years from '../images/100years.jpg';
-import banksy from '../images/banksy.jpg';
-import basquiat from '../images/basquiat.jpg';
-import before from '../images/before-jump.jpg';
-import filmsalers from '../images/filmsalers.jpg';
-import gimme from '../images/gimme.jpg';
-import harvey from '../images/harvey.jpg';
-import janise from '../images/janise.jpg';
-import rudeboy from '../images/rudeboy.jpg';
-import run from '../images/run.jpg';
-import skate from '../images/skate.jpg';
-import sound from '../images/sound&sinema.jpg';
-import thinking from '../images/thinking.jpg';
-import warofart from '../images/war-of-art.jpg';
-import zone from '../images/zone.jpg';
-
-export const cardsList = [
-  {
-    id: '02',
-    title: '33 слова о дизайне',
-    image: words
-  },
-  {
-    id: '03',
-    title: 'Киноальманах «100 лет дизайна»',
-    image: years
-  },
-  {
-    id: '04',
-    title: 'В погоне за Бенкси',
-    image: banksy
-  },
-  {
-    id: '05',
-    title: 'Баския: Взрыв реальности',
-    image: basquiat
-  },
-  {
-    id: '06',
-    title: 'Бег это свобода',
-    image: run
-  },
-  {
-    id: '07',
-    title: 'Книготорговцы',
-    image: filmsalers
-  },
-  {
-    id: '08',
-    title: 'Когда я думаю о Германии ночью',
-    image: thinking
-  },
-  {
-    id: '09',
-    title: 'Gimme Danger: История Игги и The Stooges',
-    image: gimme
-  },
-  {
-    id: '10',
-    title: 'Дженис: Маленькая девочка грустит',
-    image: janise
-  },
-  {
-    id: '11',
-    title: 'Соберись перед прыжком',
-    image: before
-  },
-  {
-    id: '12',
-    title: 'Пи Джей Харви: A dog called money',
-    image: harvey
-  },
-  {
-    id: '13',
-    title: 'По волнам: Искусство звука в кино',
-    image: sound
-  },
-  {
-    id: '14',
-    title: 'Рудбой',
-    image: rudeboy
-  },
-  {
-    id: '15',
-    title: 'Скейт — кухня',
-    image: skate
-  },
-  {
-    id: '01',
-    title: 'Война искусств',
-    image: warofart
-  },
-  {
-    id: '16',
-    title: 'Зона',
-    image: zone
-  },
-];
-
-export const savedMoviesList = [
-  {
-    id: '02',
-    title: '33 слова о дизайне',
-    image: words
-  },
-  {
-    id: '03',
-    title: 'Киноальманах «100 лет дизайна»',
-    image: years
-  },
-  {
-    id: '04',
-    title: 'В погоне за Бенкси',
-    image: banksy
-  },
-]
 
 export const pathname = window.location.pathname;
+
+//export const BASE_URL = 'http://localhost:3000';
+export const BASE_URL = 'https://api.movies-express.nomoredomains.rocks';
+
+export const nameRegex = /^[a-zA-Zа-яА-Я\s-]+$/;
+//export const emailRegex = /^[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]{2,}$/;
+
+export const SHORT_FILM_DURATION = 40;
+
+export const INPUT_VALUE_MIN_LENGTH = 2;
+export const INPUT_VALUE_MAX_LENGTH = 30;
+
+/* используются в useWindowResize */
+export const RESIZE_TIMEOUT = 800;
+export const WIDTH_725 = 725;
+export const WIDTH_990 = 990;
+export const WIDTH_1280 = 1280;
+export const CARDS_IN_ROW_RES_320_725 = 5;
+export const MORE_CARDS_RES_320_725 = 5;
+export const CARDS_IN_ROW_RES_725_990 = 2;
+export const MORE_CARDS_RES_725_990 = 2;
+export const CARDS_IN_ROW_RES_990_1280 = 3;
+export const MORE_CARDS_RES_990_1280 = 3;
+export const CARDS_IN_ROW_RES_MORE_1280 = 4;
+export const MORE_CARDS_RES_MORE_1280 = 4;
