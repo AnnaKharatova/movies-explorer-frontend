@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/movies-explorer-frontend/static/css/main.71c1cd22.css",
-    "main.js": "/movies-explorer-frontend/static/js/main.acde0717.js",
-    "static/js/787.ab3d119a.chunk.js": "/movies-explorer-frontend/static/js/787.ab3d119a.chunk.js",
-    "static/media/Inter-Medium.woff": "/movies-explorer-frontend/static/media/Inter-Medium.9053572c46aeb4b16caa.woff",
-    "static/media/Inter-Regular.woff": "/movies-explorer-frontend/static/media/Inter-Regular.8c206db99195777c6769.woff",
-    "static/media/Inter-Medium.woff2": "/movies-explorer-frontend/static/media/Inter-Medium.293fd13dbca5a3e450ef.woff2",
-    "static/media/Inter-Regular.woff2": "/movies-explorer-frontend/static/media/Inter-Regular.c8ba52b05a9ef10f4758.woff2",
-    "static/media/1637795370_53-koshka-top-p-portret-kota-56.jpg": "/movies-explorer-frontend/static/media/1637795370_53-koshka-top-p-portret-kota-56.9d94417b8399a0316dac.jpg",
-    "static/media/landing-logo.png": "/movies-explorer-frontend/static/media/landing-logo.d38a667c4e1b38d4f881.png",
-    "static/media/logo.svg": "/movies-explorer-frontend/static/media/logo.f242f197c1844a6105db25db5fd03161.svg",
-    "index.html": "/movies-explorer-frontend/index.html",
-    "static/media/account-logo.svg": "/movies-explorer-frontend/static/media/account-logo.84be58893a5cc32bdc5b.svg",
-    "static/media/button-like-active.svg": "/movies-explorer-frontend/static/media/button-like-active.4705944683ead6258008.svg",
-    "static/media/button-like.svg": "/movies-explorer-frontend/static/media/button-like.1bfd4c5599f5f3869e0d.svg",
-    "static/media/delete-button.svg": "/movies-explorer-frontend/static/media/delete-button.387f03f75481ddc72603.svg",
-    "static/media/close-button.svg": "/movies-explorer-frontend/static/media/close-button.b7eedcc3a1460ea60571.svg",
-    "main.71c1cd22.css.map": "/movies-explorer-frontend/static/css/main.71c1cd22.css.map",
-    "main.acde0717.js.map": "/movies-explorer-frontend/static/js/main.acde0717.js.map",
-    "787.ab3d119a.chunk.js.map": "/movies-explorer-frontend/static/js/787.ab3d119a.chunk.js.map"
+    "main.css": "/static/css/main.7bec9021.css",
+    "main.js": "/static/js/main.e15e0fe8.js",
+    "static/js/787.ab3d119a.chunk.js": "/static/js/787.ab3d119a.chunk.js",
+    "static/media/Inter-Medium.woff": "/static/media/Inter-Medium.9053572c46aeb4b16caa.woff",
+    "static/media/Inter-Regular.woff": "/static/media/Inter-Regular.8c206db99195777c6769.woff",
+    "static/media/Inter-Medium.woff2": "/static/media/Inter-Medium.293fd13dbca5a3e450ef.woff2",
+    "static/media/Inter-Regular.woff2": "/static/media/Inter-Regular.c8ba52b05a9ef10f4758.woff2",
+    "static/media/1637795370_53-koshka-top-p-portret-kota-56.jpg": "/static/media/1637795370_53-koshka-top-p-portret-kota-56.9d94417b8399a0316dac.jpg",
+    "static/media/landing-logo.png": "/static/media/landing-logo.d38a667c4e1b38d4f881.png",
+    "static/media/logo.svg": "/static/media/logo.f242f197c1844a6105db25db5fd03161.svg",
+    "index.html": "/index.html",
+    "static/media/account-logo.svg": "/static/media/account-logo.84be58893a5cc32bdc5b.svg",
+    "static/media/button-like-active.svg": "/static/media/button-like-active.4705944683ead6258008.svg",
+    "static/media/button-like.svg": "/static/media/button-like.1bfd4c5599f5f3869e0d.svg",
+    "static/media/delete-button.svg": "/static/media/delete-button.387f03f75481ddc72603.svg",
+    "static/media/close-button.svg": "/static/media/close-button.b7eedcc3a1460ea60571.svg",
+    "main.7bec9021.css.map": "/static/css/main.7bec9021.css.map",
+    "main.e15e0fe8.js.map": "/static/js/main.e15e0fe8.js.map",
+    "787.ab3d119a.chunk.js.map": "/static/js/787.ab3d119a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.71c1cd22.css",
-    "static/js/main.acde0717.js"
+    "static/css/main.7bec9021.css",
+    "static/js/main.e15e0fe8.js"
   ]
 }
