@@ -18,7 +18,7 @@ function Portfolio() {
                     </a>
                 </li>
                 <li>
-                    <a className="portfolio__item item-third" href="https://github.com/AnnaKharatova/react-mesto-api-full-gha" target='blank'>
+                    <a className="portfolio__item item-third" href="https://annakharatova.github.io/sign-in" target='blank'>
                         <p className="portfolio__item-title" >Одностраничное приложение</p>
                         <span className="portfolio__item-link ">&#8599;</span>
                     </a>
