@@ -125,12 +125,12 @@ function App() {
     <CurrentUserContext.Provider value={currentUser}>
       <div className="page">
         <Routes>
-          <Route path="/" element={<Main isLogged={loggedIn} popupError={popupError} setIsPopupErrorOpen={setIsPopupErrorOpen} isPopupErrorOpen={isPopupErrorOpen} />} />
-          <Route path="/movies" element={<ProtectedRoute component={Movies} isLoading={isLoading} isLogged={loggedIn} savedMovies={savedMovies} setSavedMovies={setSavedMovies} />} />
-          <Route path="/saved-movies" element={<ProtectedRoute component={SavedMovies} isLoading={isLoading} isLogged={loggedIn} savedMovies={savedMovies} setSavedMovies={setSavedMovies} />} />
-          <Route path="/profile" element={<ProtectedRoute component={Profile} isLoading={isLoading} isLogged={loggedIn} handleLogOut={handleLogOut} />} />
-          <Route path="/signin" element={<Login onRegister={onRegister} onLogin={onLogin} error={error} />} />
-          <Route path="/signup" element={<Register onRegister={onRegister} onLogin={onLogin} error={error} />} />
+          <Route path="/movies-explorer-frontend/" element={<Main isLogged={loggedIn} popupError={popupError} setIsPopupErrorOpen={setIsPopupErrorOpen} isPopupErrorOpen={isPopupErrorOpen} />} />
+          <Route path="/movies-explorer-frontend/movies" element={<ProtectedRoute component={Movies} isLoading={isLoading} isLogged={loggedIn} savedMovies={savedMovies} setSavedMovies={setSavedMovies} />} />
+          <Route path="/movies-explorer-frontend/saved-movies" element={<ProtectedRoute component={SavedMovies} isLoading={isLoading} isLogged={loggedIn} savedMovies={savedMovies} setSavedMovies={setSavedMovies} />} />
+          <Route path="/movies-explorer-frontend/profile" element={<ProtectedRoute component={Profile} isLoading={isLoading} isLogged={loggedIn} handleLogOut={handleLogOut} />} />
+          <Route path="/movies-explorer-frontend/signin" element={<Login onRegister={onRegister} onLogin={onLogin} error={error} />} />
+          <Route path="/movies-explorer-frontend/signup" element={<Register onRegister={onRegister} onLogin={onLogin} error={error} />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </div>
