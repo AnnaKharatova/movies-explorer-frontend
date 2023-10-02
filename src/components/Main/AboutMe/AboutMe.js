@@ -1,5 +1,5 @@
 import './AboutMe.css';
-import photo from '../../../images/1637795370_53-koshka-top-p-portret-kota-56.jpg'
+import photo from '../../../images/аватар2.jpg'
 
 function AboutMe() {
     return (
@@ -9,9 +9,9 @@ function AboutMe() {
                 <img className="student__photo" src={photo} alt="Фото студента" />
                 <div className='student__about'>
                     <h3 className="student__name">Анна</h3>
-                    <p className="student__subtitle">Фронтенд-разработчик, 30 лет</p>
+                    <p className="student__subtitle">Фронтенд-разработчик, 38 лет</p>
                     <p className="student__text">Я родилась и живу в Санкт-Петербурге. У меня есть муж
-                        и дочь. Я люблю слушать музыку, а ещё увлекаюсь бегом и вышиваю крестиком. Недавно начала кодить</p>
+                        и двое детей. Я люблю читать художественную литературу, увлекаюсь йогой, вышиваю крестиком. Недавно начала кодить</p>
                     <a className="student__link" href="'https://github.com/AnnaKharatova" target='blank'>Github</a>
                 </div>
             </div>
